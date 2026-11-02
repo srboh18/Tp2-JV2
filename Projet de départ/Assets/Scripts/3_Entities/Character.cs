@@ -101,9 +101,45 @@ public class Character : MonoBehaviour, IDestination
 
         // Init values.
         nextThrowTrashTime = PickNextThrowTrashTime();
-        
+
+
+        //  Pour faire spawn aléatoirement les Characters
+        ManageRandomSpawn();
+
+    }
+
+    private void ManageRandomSpawn()
+    {
         // Init starting position.
-        // TODO : Placer le personnage à un endroit aléatoire.
+        var spawnPoints = gameController.CityObjects.CharacterSpawnPoints;
+
+        // Parcourir les points de spawn
+        foreach (var spawnPoint in spawnPoints)
+        {
+            bool isOccupied = false;
+
+            // Vérifier si un personnage occupe ce point
+            foreach (var character in gameController.CityObjects.Characters)
+            {
+                if (character == this)
+                    continue;
+
+                if (Vector3.Distance(
+                        character.Position,
+                        spawnPoint.Position) < 1f)
+                {
+                    isOccupied = true;
+                    break;
+                }
+            }
+
+            // Placer le personnage au premier point libre
+            if (!isOccupied)
+            {
+                transform.position = spawnPoint.Position;
+                break;
+            }
+        }
     }
 
     // TODO : Enlever la méthode Start. Ce n'est que pour la courte démo quand vous partez le jeu la première fois.
