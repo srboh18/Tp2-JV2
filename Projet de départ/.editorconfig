@@ -1,0 +1,4 @@
+[*.cs]
+resharper_check_namespace_highlighting = none
+resharper_csharp_keep_existing_attribute_arrangement = true
+resharper_blank_lines_around_field = 0
