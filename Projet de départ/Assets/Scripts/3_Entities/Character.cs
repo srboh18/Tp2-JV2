@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts._3_Entities.CharacterStateMachine;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -54,7 +55,6 @@ public class Character : MonoBehaviour, IDestination
     
     [Header("Movement")]
     [SerializeField, Min(0)] private float destinationReachedDistance = 0.5f;
-    [SerializeField] private Vector3 initialDestination;
 
     private GameController gameController;
     private CharacterVitals vitals;
@@ -63,10 +63,15 @@ public class Character : MonoBehaviour, IDestination
     private NavMeshAgent navMeshAgent;
     private CapsuleCollider collider;
     private Renderer[] renderers;
+    private CharacterSensor characterSensor;
     private float nextThrowTrashTime;
+
+
+    public CharacterStateMachine stateMachine;
 
     public CharacterVitals Vitals => vitals;
     public CharacterBlackboard Blackboard => blackboard;
+    public CharacterStateMachine StateMachine => stateMachine;
 
     public Vector3 Position
     {
@@ -98,26 +103,60 @@ public class Character : MonoBehaviour, IDestination
         navMeshAgent = GetComponent<NavMeshAgent>();
         collider = GetComponent<CapsuleCollider>();
         renderers = GetComponentsInChildren<Renderer>();
+        characterSensor = GetComponentInChildren<CharacterSensor>();
 
         // Init values.
         nextThrowTrashTime = PickNextThrowTrashTime();
-        
-        // Init starting position.
-        // TODO : Placer le personnage à un endroit aléatoire.
-    }
 
-    // TODO : Enlever la méthode Start. Ce n'est que pour la courte démo quand vous partez le jeu la première fois.
-    //        Enlever aussi le [SerializedField] "initialDestination" par la même occasion.
-    private IEnumerator Start()
+
+        //  Pour faire spawn aléatoirement les Characters
+        ManageRandomSpawn();
+
+        //  On donne un state de base (WorkingState)
+        stateMachine = new CharacterStateMachine();
+        stateMachine.Awake(this);
+    }
+    private void Update()
     {
-        // Move.
-        navMeshAgent.SetDestination(initialDestination);
-        yield return new WaitUntil(() => Vector3.Distance(transform.position, initialDestination) < destinationReachedDistance);
-        
-        // Greet.
-        characterAnimation.PlayGreetAnimation();
+        stateMachine.Update();
     }
 
+    private void ManageRandomSpawn()
+    {
+        // Init starting position.
+        var spawnPoints = gameController.CityObjects.CharacterSpawnPoints;
+
+        // Parcourir les points de spawn
+        foreach (var spawnPoint in spawnPoints)
+        {
+            bool isOccupied = false;
+
+            // Vérifier si un personnage occupe ce point
+            foreach (var character in gameController.CityObjects.Characters)
+            {
+                if (character == this)
+                    continue;
+
+                if (Vector3.Distance(
+                        character.Position,
+                        spawnPoint.Position) < 1f)
+                {
+                    isOccupied = true;
+                    break;
+                }
+            }
+
+            // Placer le personnage au premier point libre
+            if (!isOccupied)
+            {
+                transform.position = spawnPoint.Position;
+                break;
+            }
+        }
+    }
+
+   
+   
     public void NavigateTo(IDestination destination)
     {
         IEnumerator Routine()
@@ -221,21 +260,22 @@ public class Character : MonoBehaviour, IDestination
     {
         IEnumerator Routine()
         {
-            // Cancel navigation.
+            // Arrêter le déplacement.
             navMeshAgent.ResetPath();
 
-            // Play the greet animation.
-            characterAnimation.PlayGreetAnimation();
-
-            // Look at the other character.
+            // Regarder l'autre personnage.
             transform.LookAt(character.transform.position, Vector3.up);
 
-            // Wait for animation to end.
-            yield return new WaitUntil(() => !characterAnimation.IsPlayingGreetAnimation());
+            // Jouer l'animation de salutation.
+            characterAnimation.PlayGreetAnimation();
 
-            // Remove friend from memory.
-            // TODO : Enlevez l'ami salué de la mémoire du personnage. Par exemple :
-            //      blackboard.Friend = null;
+            // Attendre la fin de l'animation.
+            yield return new WaitUntil(
+                () => !characterAnimation.IsPlayingGreetAnimation()
+            );
+
+            // Retirer l'ami de la mémoire.
+            blackboard.LastFriendSeen = null;
         }
 
         StartCoroutine(Routine());

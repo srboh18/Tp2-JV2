@@ -32,7 +32,7 @@ public class CharacterVitals : MonoBehaviour
     [SerializeField, Range(0, 100)] private float maxStartingSleepiness = 50f;
 
     [Header("Change rates")]
-    [SerializeField, Min(0)] private float hungerGainRate = 2.5f;
+    [SerializeField, Min(0)] private float hungerGainRate = 1f; //2.5f;
     [SerializeField, Min(0)] private float hungerReductionRate = 25f;
     [SerializeField, Min(0)] private float lonelinessGainRate = 0.5f;
     [SerializeField, Min(0)] private float lonelinessReductionRate = 15f;
