@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts._3_Entities.CharacterStateMachine;
+using UnityEngine;
 
 // Mémoire du personnage.
 //
@@ -24,7 +25,9 @@ public class CharacterBlackboard : MonoBehaviour
     public Building[] SocialBuildings => gameController.CityObjects.SocialBuildings;
     
     [Header("Memory")]
-    [field:SerializeField] public bool Example { get; set; }
+    [field:SerializeField] public ICharacterState currentState { get; set; }
+    [field:SerializeField] public Trash LastTrashSeen { get; set; }
+    [field:SerializeField] public Character LastFriendSeen { get; set; }
     
     // TODO : Ajouter ici les autres éléments à conserver en mémoire.
     //        Notez que la syntaxe est légèrement différente de ce que vous avez été habitué : il y a un "field:" devant

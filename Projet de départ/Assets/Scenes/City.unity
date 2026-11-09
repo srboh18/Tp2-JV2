@@ -1281,6 +1281,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6789839415281337712, guid: 5835e39945fe62142a92da5aab6375d7, type: 3}
   m_PrefabInstance: {fileID: 123374098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &123649360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1817978364724054044, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
+  m_PrefabInstance: {fileID: 1590660908963333345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &127849037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,6 +1602,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5489036386304018604, guid: e7750208bb0ff014c8a24432bf9cbb05, type: 3}
   m_PrefabInstance: {fileID: 156808880}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &173507327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 173507329}
+  - component: {fileID: 173507328}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &173507328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173507327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aadb6b2a98cbc34dbbee5fa9407636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  nameText: {fileID: 123649360}
+  avatarImage: {fileID: 624673716}
+  hungerBar: {fileID: 1142750967}
+  socialBar: {fileID: 430213211}
+  sleepBar: {fileID: 897370876}
+  nextCharacterAction: {fileID: 6687872274934810856, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  previousCharacterAction: {fileID: 7760400894658334405, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!4 &173507329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173507327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 215.2545, y: -0, z: 206.72826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174538863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4397,6 +4459,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5489036386304018604, guid: 99af4143b59b50b489cfc5f5a277a5ab, type: 3}
   m_PrefabInstance: {fileID: 428935545}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &430213211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6479724106094118183, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
+  m_PrefabInstance: {fileID: 1590660908963333345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Scrollbar
 --- !u!1001 &441339120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6145,6 +6218,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5489036386304018604, guid: 6541a66557fe8db4a8d1385e5082f9af, type: 3}
   m_PrefabInstance: {fileID: 620739494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &624673716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8725535514106404824, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
+  m_PrefabInstance: {fileID: 1590660908963333345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &637751864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8421,6 +8505,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5897847837676943652, guid: 4bddef2e107174a4a9436476a71208ca, type: 3}
   m_PrefabInstance: {fileID: 881789612}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &897370876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8268130745520589183, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
+  m_PrefabInstance: {fileID: 1590660908963333345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Scrollbar
 --- !u!1001 &915233980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11009,6 +11104,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2981316287729991673, guid: 10eefbaa7cef0d44f863b5613a23c95f, type: 3}
   m_PrefabInstance: {fileID: 1546041067}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1142750967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4403241435926618128, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
+  m_PrefabInstance: {fileID: 1590660908963333345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Scrollbar
 --- !u!1001 &1143206724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13367,48 +13473,53 @@ MonoBehaviour:
     - {fileID: 946565}
     - {fileID: 783705625}
     characterSpawnPoints:
-    - {fileID: 18517145}
+    - {fileID: 1427538481}
+    - {fileID: 1423157766}
+    - {fileID: 1924127195}
     - {fileID: 2043312947}
+    - {fileID: 646633349}
+    - {fileID: 18517145}
     - {fileID: 1536052130}
+    - {fileID: 854510942}
+    - {fileID: 76722086}
+    - {fileID: 1899476294}
     - {fileID: 744567840}
     - {fileID: 1171645594}
-    - {fileID: 1423157766}
-    - {fileID: 1233042357}
-    - {fileID: 1924127195}
     - {fileID: 1389914617}
-    - {fileID: 1899476294}
+    - {fileID: 521081373}
+    - {fileID: 1233042357}
     houseBuildings:
-    - {fileID: 2455335514173280566}
-    - {fileID: 3091410892781545976}
-    - {fileID: 6744541523198854528}
     - {fileID: 2175895343471673838}
     - {fileID: 8912511613112064696}
+    - {fileID: 7495854117817374182}
+    - {fileID: 3091410892781545976}
+    - {fileID: 4999908547610857269}
     - {fileID: 4742344603325021620}
     - {fileID: 5413678597680996547}
-    - {fileID: 4999908547610857269}
-    - {fileID: 6993175902043859677}
-    - {fileID: 7495854117817374182}
     - {fileID: 8012591450327373704}
+    - {fileID: 6744541523198854528}
+    - {fileID: 6993175902043859677}
+    - {fileID: 2455335514173280566}
     workplaceBuildings:
-    - {fileID: 4010666869323600125}
-    - {fileID: 6424598870854831174}
-    - {fileID: 8081396584895521807}
-    - {fileID: 8378147440343646476}
     - {fileID: 6500970208695005471}
-    - {fileID: 5038043858900536785}
-    - {fileID: 4135227295029508005}
-    - {fileID: 1027407545298443453}
     - {fileID: 582162338684567466}
+    - {fileID: 4010666869323600125}
+    - {fileID: 8081396584895521807}
+    - {fileID: 4135227295029508005}
+    - {fileID: 5038043858900536785}
+    - {fileID: 6424598870854831174}
+    - {fileID: 8378147440343646476}
+    - {fileID: 1027407545298443453}
     foodBuildings:
-    - {fileID: 3542471760970341061}
-    - {fileID: 1458781244937631600}
     - {fileID: 2776502201010151208}
+    - {fileID: 3542471760970341061}
     - {fileID: 532622172499608675}
+    - {fileID: 1458781244937631600}
     socialBuildings:
-    - {fileID: 595571596}
+    - {fileID: 1114941267793207701}
     - {fileID: 9005455584957013423}
     - {fileID: 4224010620270515400}
-    - {fileID: 1114941267793207701}
+    - {fileID: 595571596}
   objectPools:
     trash: {fileID: 207427538}
 --- !u!114 &1452245794 stripped
@@ -20642,7 +20753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813005738065410212, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
       propertyPath: m_text
-      value: Social
+      value: Solitude
       objectReference: {fileID: 0}
     - target: {fileID: 6816198358589049870, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
       propertyPath: m_Name
@@ -20650,7 +20761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7609373161493443836, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
       propertyPath: m_text
-      value: "\xC9nergie"
+      value: Sommeil
       objectReference: {fileID: 0}
     - target: {fileID: 7778716228095006275, guid: 3cef66dc96052eb4582321aa644f04aa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22887,6 +22998,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 803480798}
   - {fileID: 966855026}
+  - {fileID: 173507329}
   - {fileID: 789031081}
   - {fileID: 975451851}
   - {fileID: 474768134}

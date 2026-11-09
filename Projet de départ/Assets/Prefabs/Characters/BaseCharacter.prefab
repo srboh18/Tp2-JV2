@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4972603572126591555}
   - component: {fileID: 4625891841882623748}
   - component: {fileID: 7691930055141097310}
+  - component: {fileID: 4772876150890004791}
   m_Layer: 0
   m_Name: BaseCharacter
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   minThrowDelay: 5
   maxThrowDelay: 60
   destinationReachedDistance: 0.5
-  initialDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &5189816781710339723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +77,8 @@ MonoBehaviour:
   <House>k__BackingField: {fileID: 0}
   <Workplace>k__BackingField: {fileID: 0}
   <Friends>k__BackingField: []
-  <Example>k__BackingField: 0
+  <LastTrashSeen>k__BackingField: {fileID: 0}
+  <LastFriendSeen>k__BackingField: {fileID: 0}
 --- !u!114 &6321501451660686319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +321,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4772876150890004791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637105231329891834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afdfbbea4a50f4ea0af04830e5f5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSensor
 --- !u!1 &7887390569648689585
 GameObject:
   m_ObjectHideFlags: 0
